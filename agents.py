@@ -665,11 +665,12 @@ class GraphicEnvironment(XYEnvironment):
             if self.is_done():
                 break
             self.step()
-        self.update(delay)
+        # self.update(delay)
+        self.reveal()
 
     def update(self, delay=1):
-        sleep(delay)
         self.reveal()
+        sleep(delay)
 
     def reveal(self):
         """Display the BlockGrid for this world - the last thing to be added
@@ -978,7 +979,7 @@ class WumpusEnvironment(XYEnvironment):
                     if len(wumpus):
                         wumpus[0].alive = False
                         break
-                    arrow_travel = agent.direction.move_forward(agent.location)
+                    arrow_travel = agent.direction.move_forward(arrow_travel)
                 agent.has_arrow = False
 
     def in_danger(self, agent):
