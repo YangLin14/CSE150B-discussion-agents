@@ -2,5 +2,5 @@ ipythonblocks
 ipywidgets
 qpsolvers[open_source_solvers]
 sortedcontainers
-matplotlib
-networkx
+imgkit
+nbconvert[webpdf]
